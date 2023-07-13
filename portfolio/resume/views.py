@@ -66,7 +66,7 @@ def home(request):
                                                 "education2":"Armenian State Pedagogical University AF. KH. Abovyan.",
                                                 "start_end1":"1990-1995",
                                                 "start_end2":"2005-2008",
-                                                "skills":[skills[[]:4],
+                                                "skills":skills,
                                                         
                                                 "languages": [
                                                     {"lang": "English"},
