@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Chefs,Testimonials
+from .models import Chef,Testimonials
 
 
 
@@ -13,6 +13,6 @@ class TestimonialsAdmin(admin.ModelAdmin):
     search_fields = ('full_name', 'position')
     
 # Register your models here.
-admin.site.register(Chefs,ChefsAdmin)
+admin.site.register(Chef,ChefsAdmin)
 admin.site.register(Testimonials,TestimonialsAdmin)
 

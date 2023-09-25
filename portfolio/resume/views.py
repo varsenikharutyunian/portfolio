@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from .models import Chefs,Testimonials
+from .models import Chef,Testimonials
 
 def home(request):
-    chefs=Chefs.objects.all()
+    chefs=Chef.objects.all()
     testimonial = Testimonials.objects.all()
     
     data={"name":"CARDEN FAMILY GUESTHOUSE",

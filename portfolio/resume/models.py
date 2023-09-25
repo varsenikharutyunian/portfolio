@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Chefs(models.Model):
+class Chef(models.Model):
     name=models.TextField(max_length=50)
     job_possition = models.TextField()
     text= models.TextField()
