@@ -22,6 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('resume/', include("resume.urls"))
     
-    ]
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    ] += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
