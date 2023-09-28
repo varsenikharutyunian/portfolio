@@ -50,8 +50,8 @@
     <div class="container">
       <div class="row justify-content-between gy-5">
         <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
-          <h2 data-aos="fade-up">{{name}}<br>{{surename}}</h2>
-          <p data-aos="fade-up" data-aos-delay="100">{{text}}</p>
+          <h2 data-aos="fade-up">{{name}}<br>{{surname}}</h2>
+          <p data-aos="fade-up" data-aos-delay="100">{{text1}}</p>
           <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
             <a href="#book-a-table" class="btn-book-a-table">Book a Table</a>
             <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
@@ -79,7 +79,7 @@
           <div class="col-lg-7 position-relative about-img" style="background-image: url({% static 'assets/img/about.jpg' %})"; data-aos="fade-up" data-aos-delay="150">
             <div class="call-us position-absolute">
               <h4>Book a Table</h4>
-              <p>+374 939393</p>
+              <p>{{phone}}</p>
             </div>
           </div>
           <div class="col-lg-5 d-flex align-items-end" data-aos="fade-up" data-aos-delay="300">
@@ -904,8 +904,8 @@
             <div class="info-item  d-flex align-items-center">
               <i class="icon bi bi-map flex-shrink-0"></i>
               <div>
-                <h3>Our Address</h3>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <h3>Address</h3>
+                <p>{{adress}}</p>
               </div>
             </div>
           </div><!-- End Info Item -->
@@ -914,8 +914,8 @@
             <div class="info-item d-flex align-items-center">
               <i class="icon bi bi-envelope flex-shrink-0"></i>
               <div>
-                <h3>Email Us</h3>
-                <p>contact@example.com</p>
+                <h3>Email </h3>
+                <p>{{ personal_info.user.email}}</p>
               </div>
             </div>
           </div><!-- End Info Item -->
@@ -924,8 +924,8 @@
             <div class="info-item  d-flex align-items-center">
               <i class="icon bi bi-telephone flex-shrink-0"></i>
               <div>
-                <h3>Call Us</h3>
-                <p>+1 5589 55488 55</p>
+                <h3>Phone</h3>
+                <p>{{phone}}</p>
               </div>
             </div>
           </div><!-- End Info Item -->
@@ -996,8 +996,8 @@
           <div>
             <h4>Reservations</h4>
             <p>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              <strong>Phone:</strong> {{phone}}<br>
+              <strong>Email:</strong> {{personal_info.user.email}}<br>
             </p>
           </div>
         </div>

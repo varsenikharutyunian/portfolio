@@ -8,7 +8,7 @@ class ChefsAdmin(admin.ModelAdmin):
     list_filter=["name","text"]
     
 class PersonalInfoAdmin(admin.ModelAdmin):
-    list_display = ['name', 'surname', 'address', 'tel', 'email']
+    list_display = ['name', 'firstname','lastname','surname','jobe' 'address', 'tel', 'email']
     list_filter = ['name']
     search_fields = ['name']
     

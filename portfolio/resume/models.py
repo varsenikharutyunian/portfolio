@@ -30,6 +30,8 @@ class PersonalInfo(models.Model):
     phone = models.CharField(max_length=30)  
     degree = models.CharField(max_length=30)
     email = models.EmailField()
+    adres = models.CharField(max_length=30)
+    openinghours=models.TextField(max_length=30)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 class Message(models.Model):
