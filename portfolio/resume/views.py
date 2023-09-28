@@ -1,9 +1,26 @@
 from django.shortcuts import render
-from .models import Chef,Testimonials
+from .models import Chef,Testimonials,PersonalInfo
+from .forms import MessageForm
 
 def home(request):
+    
+    status = 200
+
+    if request.method == "POST":
+        print("POSTED DATA")
+        print(request.POST)
+        form = MessageForm(request.POST)
+        if form.is_valid():
+            form.save()
+            status = 201
+        else:
+            print("TELL them that sent data is not valid")
+    
+    
     chefs=Chef.objects.all()
     testimonial = Testimonials.objects.all()
+    messageForm = MessageForm()
+    personal_info = PersonalInfo.objects.get(user__username = "varsik")
     
     data={"name":"CARDEN FAMILY GUESTHOUSE",
         "name1":"Varsenik",
@@ -19,9 +36,13 @@ def home(request):
                                             "text7":"We invite you to come and explore the serene beauty of Bazmaghbyur, where you can not only relax in our comfortable guest house but also quench your thirst with some of the purest water nature has to offer.",
                                             "text":"My name is Vars",
                                             "chefs": chefs,
-                                            "testimonial": testimonial}
+                                            "testimonial": testimonial,
+                                            "messageForm": messageForm,
+                                            "personal_info":personal_info
+                                            }
+    
     
                                             
-    return render(request, "index.html", context = data )
+    return render(request, "index.html", context = data ,status=status)
     
 

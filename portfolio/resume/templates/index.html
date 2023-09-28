@@ -943,11 +943,13 @@
           </div><!-- End Info Item -->
 
         </div>
+        
 
-        <form action="forms/contact.php" method="post" role="form" class="php-email-form p-3 p-md-4">
+        <form action="/" method="post" role="form" class="php-email-form p-3 p-md-4">
+          {% csrf_token %}
           <div class="row">
             <div class="col-xl-6 form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+              <input type="text" name="full_name" class="form-control" id="full_name" placeholder="Full Name" required>
             </div>
             <div class="col-xl-6 form-group">
               <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>

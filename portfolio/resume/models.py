@@ -1,4 +1,7 @@
 from django.db import models
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 # Create your models here.
 class Chef(models.Model):
@@ -21,4 +24,17 @@ class Testimonials(models.Model):
 
     def __str__(self) -> str:
         return f"Name - {self.full_name}"
+    
+class PersonalInfo(models.Model):
+    website = models.URLField(max_length = 200)
+    phone = models.CharField(max_length=30)  
+    degree = models.CharField(max_length=30)
+    email = models.EmailField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+class Message(models.Model):
+    full_name = models.CharField(max_length=50)
+    email = models.EmailField()
+    subject = models.CharField(max_length=100)
+    message = models.CharField(max_length=1000)
     
